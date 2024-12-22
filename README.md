@@ -8,6 +8,50 @@
 - Docker Compose
 - Git
 
+## Tech Stack
+
+- Laravel 11.x
+- MySQL
+
+## Entity Relationship Diagram
+
+```mermaid
+---
+title: Campaign Management Tool ERD
+---
+erDiagram
+    User ||--o{ Campaign : creates
+    Campaign ||--o{ Payout : has
+    
+    User {
+        id integer PK
+        name varchar
+        email varchar
+        password varchar
+        remember_token varchar
+        email_verified_at timestamp
+        created_at timestamp
+        updated_at timestamp
+    }
+    Campaign {
+        id integer PK
+        user_id integer FK
+        title varchar
+        landing_page_url varchar
+        activity_status enum
+        created_at timestamp
+        updated_at timestamp
+    }
+    Payout {
+        id integer PK
+        campaign_id integer FK
+        country enum
+        payout_value decimal
+        created_at timestamp
+        updated_at timestamp
+    }
+```
+
 ### Setup Instructions
 
 1. Clone the repository
@@ -41,9 +85,11 @@ docker compose exec laravel.test php artisan key:generate
 docker compose exec laravel.test php artisan migrate
 ```
 
+If you open the browser and navigate to http://localhost/api, you should see `{"message":"Hello World"}`
+
 ### Available Services
 
-- **Application**: http://localhost:80
+- **Application**: http://localhost/api
 - **MySQL**: Port 3306
 - **Redis**: Port 6379
 
