@@ -25,23 +25,7 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 
 Route::get('/health', function () {
-    try {
-        return [
-            'message' => 'Hello World',
-            'php_version' => PHP_VERSION,
-            'laravel_version' => app()->version(),
-            'environment' => app()->environment(),
-            'debug' => config('app.debug'),
-            'config_cached' => app()->configurationIsCached(),
-            'routes_cached' => app()->routesAreCached(),
-            'storage_writable' => is_writable(storage_path())
-        ];
-    } catch (\Exception $e) {
-        return [
-            'error' => $e->getMessage(),
-            'file' => $e->getFile(),
-            'line' => $e->getLine(),
-            'trace' => $e->getTraceAsString()
-        ];
-    }
+    return [
+        'message' => 'Hello World',
+    ];
 });
