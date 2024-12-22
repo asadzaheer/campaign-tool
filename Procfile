@@ -1,1 +1,1 @@
-web: php artisan serve --host=0.0.0.0 --port=$PORT --env=production
+web: composer install --optimize-autoloader --no-dev && php artisan config:cache && php artisan route:cache && php -S 0.0.0.0:$PORT -t public/
