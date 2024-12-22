@@ -143,3 +143,18 @@ docker compose down --volumes --rmi all
 ### Development
 
 The application code is mounted into the container, so any changes you make to your local files will be reflected immediately in the container.
+
+
+## Testing
+
+Run tests using the following command:
+
+```bash
+docker compose exec laravel.test php artisan test
+```
+
+or 
+
+```bash
+./vendor/bin/sail artisan test
+```
