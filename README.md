@@ -91,6 +91,19 @@ docker compose restart
 
 Now if you open the browser and navigate to http://localhost/api, you should see `{"message":"Hello World"}`
 
+Project was setup using [Laravel Sail](https://laravel.com/docs/9.x/sail)
+After initial intall you can start using sail commands as well
+
+```bash
+./vendor/bin/sail up
+./vendor/bin/sail down
+./vendor/bin/sail logs -f
+./vendor/bin/sail artisan <command>
+./vendor/bin/sail composer <command>
+./vendor/bin/sail artisan test
+./vendor/bin/sail down --volumes --rmi all
+```
+
 ### Available Services
 
 - **Application**: http://localhost/api
@@ -125,39 +138,3 @@ docker compose down --volumes --rmi all
 ### Development
 
 The application code is mounted into the container, so any changes you make to your local files will be reflected immediately in the container.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
