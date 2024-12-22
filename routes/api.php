@@ -18,6 +18,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('campaigns', CampaignController::class);
 });
 
-Route::get('/', function () {
+Route::get('/health', function () {
     return ['message' => 'Hello World'];
 });
