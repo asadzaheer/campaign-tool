@@ -54,10 +54,9 @@ erDiagram
 
 ### Setup Instructions
 
-1. Clone the repository
+1. Clone the repository then navigate to the project directory
 ```bash
-git clone <repository-url>
-cd backend
+cd campaign-tool-backend
 ```
 
 2. Create environment file
@@ -85,7 +84,12 @@ docker compose exec laravel.test php artisan key:generate
 docker compose exec laravel.test php artisan migrate
 ```
 
-If you open the browser and navigate to http://localhost/api, you should see `{"message":"Hello World"}`
+7. Restart docker containers
+```bash
+docker compose restart
+```
+
+Now if you open the browser and navigate to http://localhost/api, you should see `{"message":"Hello World"}`
 
 ### Available Services
 
