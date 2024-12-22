@@ -17,7 +17,7 @@ class CampaignRequest extends FormRequest
             'title' => ['string', 'max:255'],
             'landing_page_url' => ['string', 'url'],
             'activity_status' => ['in:active,paused'],
-            'payouts' => ['array'],
+            'payouts' => ['array', 'min:1'],
             'payouts.*.country' => ['string', 'in:estonia,spain,bulgaria'],
             'payouts.*.payout_value' => ['numeric', 'min:0'],
         ];
