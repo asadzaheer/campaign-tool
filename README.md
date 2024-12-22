@@ -104,6 +104,11 @@ After initial intall you can start using sail commands as well
 ./vendor/bin/sail down --volumes --rmi all
 ```
 
+You can add seed data by running the following command
+```bash
+./vendor/bin/sail artisan db:seed
+```
+
 ### Available Services
 
 - **Application**: http://localhost/api
